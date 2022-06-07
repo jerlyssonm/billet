@@ -1,12 +1,9 @@
-import removeSpace from "./removeSpace"
 
 const checkCharacters = (params) => {    
-    let reiceived = removeSpace(params);
-    
-    reiceived = reiceived.split("")
+    params = params.split("")
     let newParams = ""
-    for(let i=0; i < reiceived.length; i++){
-        let char = Number(reiceived[i])
+    for(let i=0; i < params.length; i++){
+        let char = Number(params[i])
         if (Number.isNaN(char)) {
             return false
         }

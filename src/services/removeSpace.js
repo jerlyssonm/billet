@@ -4,6 +4,4 @@ const removeSpace = (params) => {
     return params
 };
 
-
-
 export default removeSpace

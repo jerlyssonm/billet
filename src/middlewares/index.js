@@ -1,10 +1,13 @@
-import { checkCharacters } from "../services";
+import { checkCharacters, removeSpace } from "../services";
 
 const validateBarCode = (req, res, next) => {
     const {barcode} = req.params
-    if (!checkCharacters(barcode)){
+
+    const param = removeSpace(barcode)
+    if (!checkCharacters(param)){
         return res.status(404).json({message: "Only numbers are allowed."})
     }
+    req.barcode = checkCharacters(param)
     next();
 };
 

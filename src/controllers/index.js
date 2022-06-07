@@ -1,6 +1,6 @@
 const getBillet = (req, res) => {
-    const { barcode } = req.params
-    res.status(200).json({BarCode: barcode.replace(" ", "")})
+    const { barcode } = req
+    res.status(200).json({BarCode: barcode})
 };
 
 export default getBillet;
