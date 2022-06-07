@@ -1,4 +1,4 @@
-import { checkCharacters, getBarCode, getDataInBillet, removeSpace } from "../services";
+import { checkCharacters, getBarCode, getDataInBillet, getPriceInBillet, removeSpace } from "../services";
 
 const validateBarCode = (req, res, next) => {
     const {barcode} = req.params
@@ -15,7 +15,7 @@ const validateBarCode = (req, res, next) => {
     }
     output.barCode = getBarCode(newCode)
     output.expirateDate = getDataInBillet(getBarCode(newCode))
-
+    output.amount = getPriceInBillet(getBarCode(newCode))
     req.output = output
     next();
 };
