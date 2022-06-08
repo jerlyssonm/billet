@@ -1,14 +1,17 @@
-import checkCharacters from "./checkCharacters";
-import removeSpace from "./removeSpace";
-import getBarCode from "./getBarCode";
-import getDataInBillet from "./getDataInBillet";
-import getPriceInBillet from "./getPriceInBillet";
+import { getBarCode, getDateInBillet, getPriceInBillet } from "../utils"
 
+const getResult = (newCode) => {
+    let output = {};
+    if(newCode.length == 44){
+        output.barCode = newCode 
+        output.expirateDate = getDateInBillet(newCode)
+        output.amount = getPriceInBillet(newCode)
+    }else {
+        output.barCode = getBarCode(newCode)
+        output.expirateDate = getDateInBillet(getBarCode(newCode))
+        output.amount = getPriceInBillet(getBarCode(newCode))
+    };
+    return output;
+};
 
-export {
-    checkCharacters,
-    removeSpace,
-    getBarCode,
-    getDataInBillet,
-    getPriceInBillet,
-}
+export default getResult;
