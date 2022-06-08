@@ -26,6 +26,7 @@ describe("test services of validate", () => {
         const statusCode = 400;
 
         expect(mockRes.status).toBeCalledWith(statusCode)
+        expect(mockRes.json).toBeCalledWith({message: "Only numbers are allowed."})
     });
 
     it("Tamanho da Sequencia de numero invalido", () => {
@@ -37,5 +38,7 @@ describe("test services of validate", () => {
         const statusCode = 400;
 
         expect(mockRes.status).toBeCalledWith(statusCode)
+        expect(mockRes.json).toBeCalledWith({message: "Enter a valid code, the default is a numerical string of 44 to 48 characters."})
+        
     });
 });
