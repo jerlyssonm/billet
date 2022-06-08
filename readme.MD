@@ -14,6 +14,7 @@ boleto indenticado na linha digitavel "sequencia numerica".
  - [Yarn](https://yarnpkg.com/)
  - [ExpressJs](https://expressjs.com/)
  - [Nodemon](https://nodemon.io/)
+ - [Jest](https://jestjs.io/pt-BR/)
 
 
 ## Instalação
