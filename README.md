@@ -46,7 +46,7 @@ com isso vc recebera um log de sucesso informando que o projeto esta sendo execu
 
 #### Aplicação com rota Unica  'GET'!!
 
-URL_BASE: http://localhost:8080
+URL_BASE: http://localhost:8080/boleto/:barcode
 
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
@@ -54,7 +54,7 @@ URL_BASE: http://localhost:8080
 
 ####  Usando a requisição de sucesso!
 ```http
-  GET  URL_BASE/boleto/21290001192110001210904475617405975872000010000
+  GET  URL_BASE/21290001192110001210904475617405975872000010000
 
   resposta: 
   Status: 200
@@ -70,7 +70,7 @@ URL_BASE: http://localhost:8080
 caso a sua sequencia contenha algum caracter especial ou letra retornará um erro
 
 ```http
-  GET  URL_BASE/boleto/2f290001192110001210904475617405975872000010000
+  GET  URL_BASE/2f290001192110001210904475617405975872000010000
 
   resposta: 
   Status: 400
@@ -84,7 +84,7 @@ caso a sua sequencia contenha algum caracter especial ou letra retornará um err
 caso a sua sequencia contenha menos de 44 caracteres ou mais de 48 retornará erro
 
 ```http
-  GET  URL_BASE/boleto/23290001192110
+  GET  URL_BASE/23290001192110
 
   resposta: 
   Status: 400
