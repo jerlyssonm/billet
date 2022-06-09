@@ -5,9 +5,7 @@ const getDataInBillet = (code: string) => {
 
     initialDateBase.setTime(initialDateBase.getTime() + (fator * 24 * 60 * 60 * 1000));
 
-    const expDate = initialDateBase;
-    
-    return `${expDate.getFullYear()}/${expDate.getMonth()+1}/${expDate.getDate()}`;
+    return `${initialDateBase.getFullYear()}/${initialDateBase.getMonth()+1}/${initialDateBase.getDate()}`;
 };
 
 export default getDataInBillet;
