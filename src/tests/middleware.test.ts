@@ -1,20 +1,14 @@
-import {
-    describe,
-    jest,
-    beforeEach,
-    it,
-    expect,    
-} from '@jest/globals';
+import { NextFunction, Request, Response,} from 'express';
 import validateBarCode from '../middlewares';
 
 describe("test services of validate", () => {
-    const mockReq = {};
-    const mockRes = {};
-    const nextFn = jest.fn();
+    const mockReq: Partial<Request> = {};
+    const mockRes: Partial<Response> = {};
+    const nextFn: Partial<NextFunction> = jest.fn();
 
     beforeEach(()=>{
-        mockRes.json = nextFn.mockReturnValue(mockRes);
-        mockRes.status = nextFn.mockReturnValue(mockRes); 
+        mockRes.json = jest.fn().mockReturnValue(mockRes);
+        mockRes.status = jest.fn().mockReturnValue(mockRes); 
     });
 
 
@@ -22,7 +16,11 @@ describe("test services of validate", () => {
         mockReq.params = {
             barcode: "2-290001192110001210904475617405911172000010000"
         };
-        validateBarCode(mockReq, mockRes, nextFn);
+        validateBarCode(
+            mockReq as Request,
+            mockRes as Response,
+            nextFn as NextFunction
+        );
         const statusCode = 400;
 
         expect(mockRes.status).toBeCalledWith(statusCode)
@@ -34,7 +32,11 @@ describe("test services of validate", () => {
             barcode: "17405911172000010000"
         };
 
-        validateBarCode(mockReq, mockRes, nextFn);
+        validateBarCode(
+            mockReq as Request,
+            mockRes as Response,
+            nextFn as NextFunction
+        );
         const statusCode = 400;
 
         expect(mockRes.status).toBeCalledWith(statusCode)

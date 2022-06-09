@@ -1,7 +1,7 @@
-const getDataInBillet = (code) => {
+const getDataInBillet = (code: string) => {
     const fator = parseInt(code.substring(4,8));
     
-    Date.prototype.addDays = function(days) {
+    Date.prototype.addDays = function(days: number) {
         const dateInMl = new Date(this.valueOf());
         dateInMl.setDate(dateInMl.getDate() + days);
         return dateInMl;

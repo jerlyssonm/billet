@@ -1,4 +1,4 @@
-const getBarCode = (code)=> {
+const getBarCode = (code: string)=> {
     let out = "";
     const idBank = code.substring(0,3)
     const idCoin = code[3]

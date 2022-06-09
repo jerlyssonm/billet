@@ -1,7 +1,12 @@
 import { getBarCode, getDateInBillet, getPriceInBillet } from "../utils"
+import BilletType from "./interface";
 
-const getResult = (newCode) => {
-    let output = {};
+const getResult = (newCode: string) => {
+    let output: BilletType = {
+        barCode : "",
+        expirateDate: "",
+        amount: ""
+    };
     if(newCode.length == 44){
         output.barCode = newCode 
         output.expirateDate = getDateInBillet(newCode)

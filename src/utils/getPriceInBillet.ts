@@ -1,4 +1,4 @@
-const getPriceInBillet = (code) => {
+const getPriceInBillet = (code: any) => {
     let output = parseInt(code.substring(9,19)).toString();
     let value = "";
     if (output.length < 6){
