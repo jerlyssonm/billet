@@ -1,6 +1,10 @@
 
 # Api - Boleto
 
+* tag: v1.0 em javascript 
+* tag: v2.0 em typescript 
+
+
 Esse projeto API-boleto é responsavel por receber a 
 linha digitavel de um boleto de pagamento e caso 
 seja uma sequencia numerica valida é retornado o 
