@@ -1,13 +1,12 @@
 const getDataInBillet = (code: string) => {
     const fator = parseInt(code.substring(4,8));
-    
-    Date.prototype.addDays = function(days: number) {
-        const dateInMl = new Date(this.valueOf());
-        dateInMl.setDate(dateInMl.getDate() + days);
-        return dateInMl;
-    };
+
     const initialDateBase = new Date(1997,10-1,7);
-    const expDate = initialDateBase.addDays(fator);
+
+    initialDateBase.setTime(initialDateBase.getTime() + (fator * 24 * 60 * 60 * 1000));
+
+    const expDate = initialDateBase;
+    
     return `${expDate.getFullYear()}/${expDate.getMonth()+1}/${expDate.getDate()}`;
 };
 
